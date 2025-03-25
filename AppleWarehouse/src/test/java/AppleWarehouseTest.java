@@ -14,22 +14,14 @@ public class AppleWarehouseTest {
 
         @Test
         public void shouldFindGreenApples() {
-            List<Apple> greenApples = appleWarehouse.findApples();
-            int green = 0;
-            for (Apple apple : greenApples) {
-                if (apple.getColor().equalsIgnoreCase("green")) {green += 1;}
-            }
-            assertEquals(green, 3);
+            List<Apple> greenApples = appleWarehouse.findApples("green");
+            assertEquals(greenApples.size(), 3);
         }
 
         @Test
         public void shouldFindRedApples() {
-            List<Apple> redApples = appleWarehouse.findApples();
-            int red = 0;
-            for (Apple apple : redApples) {
-                if (apple.getColor().equalsIgnoreCase("red")) {red += 1;}
-            }
-            assertEquals(red, 3);
+            List<Apple> redApples = appleWarehouse.findApples("red");
+            assertEquals(redApples.size(), 3);
         }
     }
 }

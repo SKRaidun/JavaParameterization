@@ -17,13 +17,13 @@ public class AppleWarehouse {
         return apples;
     }
 
-    public List<Apple> findApples() {
+    public List<Apple> findApples(String appleColor) {
 
         List<Apple> foundApples = new ArrayList<>();
 
         for (Apple apple : apples) {
             String color = apple.getColor();
-            if (color.equalsIgnoreCase("green") || color.equalsIgnoreCase("red")) {
+            if (color.equalsIgnoreCase(appleColor)) {
                 foundApples.add(apple);
             }
         }
