@@ -23,5 +23,11 @@ public class AppleWarehouseTest {
             List<Apple> redApples = appleWarehouse.findApples("red");
             assertEquals(redApples.size(), 3);
         }
+
+        @Test
+        public void shouldFindHeavyApples() {
+            List<Apple> heavyApples = appleWarehouse.findHeavyApples(99);
+            assertEquals(heavyApples.size(), 5);
+        }
     }
 }
