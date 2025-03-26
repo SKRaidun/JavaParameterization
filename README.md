@@ -1,1 +1,1 @@
-# JavaStreamAPI
+# JavaParametrization
