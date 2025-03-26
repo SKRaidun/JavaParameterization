@@ -73,5 +73,31 @@ public class AppleWarehouseTest {
         }
     }
 
+    @Nested
+    class Test2 {
+
+        @Test
+        public void shouldFindApplesAnonymous() {
+
+            List<Apple> yellowApples = warehouse.findAppleByCriteria(new AppleSearchCriteria() {
+                @Override
+                public boolean test(Apple apple) {
+                    return apple.getColor().equalsIgnoreCase("yellow");
+                }
+            });
+
+            assertEquals(yellowApples.size(), 2);
+
+            List<Apple> havierThen170 = warehouse.findAppleByCriteria(new AppleSearchCriteria() {
+                @Override
+                public boolean test(Apple apple) {
+                    return apple.getWeight() > 170;
+                }
+            });
+
+            assertEquals(havierThen170.size(), 2);
+        }
+    }
+
 
 }
