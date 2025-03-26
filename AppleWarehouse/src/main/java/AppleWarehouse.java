@@ -43,5 +43,15 @@ public class AppleWarehouse {
         return heavyApples;
     }
 
+    public List<Apple> findAppleByCriteria(AppleSearchCriteria criteria) {
+        List<Apple> resultApples = new ArrayList<>();
 
+        for (Apple apple : apples) {
+            if (criteria.test(apple)) {
+                resultApples.add(apple);
+            }
+        }
+
+        return resultApples;
+    }
 }
