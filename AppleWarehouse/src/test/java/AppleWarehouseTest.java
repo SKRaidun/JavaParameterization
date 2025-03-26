@@ -99,5 +99,21 @@ public class AppleWarehouseTest {
         }
     }
 
+    @Nested
+    class Test3 {
+
+        @Test
+        public void shouldFindApplesLambda() {
+
+            List<Apple> yellowApples = warehouse.findAppleByCriteria(apple -> apple.getColor().equalsIgnoreCase("yellow"));
+
+            assertEquals(yellowApples.size(), 2);
+
+            List<Apple> havierThen170 = warehouse.findAppleByCriteria(apple -> apple.getWeight() > 170);
+
+            assertEquals(havierThen170.size(), 2);
+        }
+    }
+
 
 }
