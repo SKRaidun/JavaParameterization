@@ -1,1 +1,1 @@
-# JavaParametrization
+# JavaParameterization
